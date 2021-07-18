@@ -1,6 +1,7 @@
 import {useSelector} from "react-redux";
-import {getIncomePerSecond, getResources} from "../Redux/selectors";
+import {getIncomePerSecond, getResources} from "../../Redux/selectors";
 import {Divider} from "@material-ui/core";
+import FormatInt from "../../Util/FormatInt";
 
 
 export default function ResourceDisplay(){
@@ -10,10 +11,10 @@ export default function ResourceDisplay(){
 
   return(
     <div>
-      <h1 style={{textAlign: 'right', marginBottom: 0}}>{resources.toFixed().replace(/(\d)(?=(\d{3})+$)/g, '$1,')}</h1>
-      <h3 style={{marginTop: '-10px', marginBottom: 0, opacity: 0.5, float: 'left'}}>Resources</h3>
-      <h3 style={{marginTop: '-10px', marginBottom: 0, opacity: 0.5, float: 'right'}}>{incomePerSecond}/s</h3>
-      <Divider style={{clear: 'both', backgroundColor: '#e8e8e8', margin: '5px 0'}}/>
+      <h1 style={{textAlign: 'right', marginBottom: 0}}>{FormatInt(resources)}</h1>
+      <h2 style={{marginTop: '-10px', marginBottom: 0, opacity: 0.5, float: 'left'}}>Resources</h2>
+      <h2 style={{marginTop: '-10px', marginBottom: 0, opacity: 0.5, float: 'right'}}>{incomePerSecond}/s</h2>
+      <div style={{clear: "both"}}/>
     </div>
   )
 }

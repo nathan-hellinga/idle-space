@@ -1,0 +1,42 @@
+.purchasable{
+    display: flex;
+    width: 100%;
+    border: 1px solid #7b7b7b;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out;
+}
+.purchasable:hover{
+    border-color: #c7c7c7;
+    background-color: rgba(255,255,255,0.05);
+}
+
+.disabled{
+    opacity: 0.35;
+}
+
+.content *{
+    margin: 0;
+    text-align: left;
+}
+.content2{
+    display: none;
+}
+.content2 *{
+    margin: 0;
+    text-align: left;
+}
+
+.owned{
+    font-size: 50px;
+    text-align: right;
+    display: block;
+    opacity: 0.5;
+}
+
+.purchasable:hover .content{
+    display: none;
+}
+.purchasable:hover .content2{
+    display: block;
+}
