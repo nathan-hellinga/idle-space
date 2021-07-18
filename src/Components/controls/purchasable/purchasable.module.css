@@ -1,5 +1,4 @@
 .purchasable{
-    display: flex;
     width: 100%;
     border: 1px solid #7b7b7b;
     border-radius: 4px;
@@ -11,10 +10,20 @@
     background-color: rgba(255,255,255,0.05);
 }
 
+.innerWrapper{
+    padding: 5px;
+    min-height: 70px;
+    display: flex;
+    width: 100%;
+}
+
 .disabled{
     opacity: 0.35;
 }
-
+.content{
+    display: flex;
+    flex-direction: column;
+}
 .content *{
     margin: 0;
     text-align: left;
@@ -38,5 +47,6 @@
     display: none;
 }
 .purchasable:hover .content2{
-    display: block;
+    display: flex;
+    flex-direction: column;
 }

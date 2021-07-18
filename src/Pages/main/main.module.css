@@ -1,5 +1,5 @@
 .sidePanel{
     background-color: var(--color-background-light);
-    height: 100vh;
+    max-height: 100%;
     overflow: auto;
 }

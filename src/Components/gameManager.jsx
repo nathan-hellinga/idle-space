@@ -1,11 +1,11 @@
-/**
- * Controls the timing of the game, ticks once every 25th of a second
- */
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getIncomePerSecond} from "../Redux/selectors";
 import {INCREASE_RESOURCES} from "../Redux/actionTypes";
 
+/**
+ * Controls the timing of the game, ticks once every 25th of a second
+ */
 export default function GameManager(){
   const dispatch = useDispatch();
   const incomePerSecond = useSelector(getIncomePerSecond);
