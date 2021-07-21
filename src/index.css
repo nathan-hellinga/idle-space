@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  user-select: none;
   font-family: 'Open Sans Condensed', -apple-system, 'Roboto', BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,7 +11,7 @@ body {
 html{
   font-size: 1rem;
   background-color: var(--color-background);
-  color: #f9f9f9
+  color: #f9f9f9;
 }
 
 h1,h2,h3,h4,h5{

@@ -18,7 +18,7 @@ export default function Main(){
 
   return(
     <Grid container spacing={2} style={{height: '100vh'}} alignItems={'stretch'}>
-      <Grid item xs={12} sm={4} md={3} className={classes.sidePanel}>
+      <Grid item xs={12} sm={4} md={3} className={classes.sidePanel} style={{overflow: 'hidden'}}>
           <ResourceDisplay/>
           <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
           <PlanetDisplay/>
@@ -26,7 +26,7 @@ export default function Main(){
           <Button
             variant={'outlined'}
             fullWidth
-            onClick={() => dispatch(increaseResources(100))}
+            onClick={() => dispatch(increaseResources(1))}
           >Mine resources</Button>
         <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
         <CommunicationsPanel />

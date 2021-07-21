@@ -1,4 +1,11 @@
-import {INCREASE_RESOURCES, ADD_INCOME_SOURCE, DECREASE_RESOURCES, BUY_UPGRADE} from "./actionTypes";
+import {
+  INCREASE_RESOURCES,
+  ADD_INCOME_SOURCE,
+  DECREASE_RESOURCES,
+  BUY_UPGRADE,
+  ADD_MESSAGE,
+  RECEIVE_MESSAGE
+} from "./actionTypes";
 
 export const increaseResources = (amount) => ({
   type: INCREASE_RESOURCES,
@@ -21,5 +28,20 @@ export const buyUpgrade = (id) => ({
   type: BUY_UPGRADE,
   payload: {
     id
+  }
+})
+
+export const addMessage = (message, delay = 3) => ({
+  type: ADD_MESSAGE,
+  payload: {
+    message,
+    delay
+  }
+})
+
+export const receiveMessage = (index) => ({
+  type: RECEIVE_MESSAGE,
+  payload: {
+    index,
   }
 })

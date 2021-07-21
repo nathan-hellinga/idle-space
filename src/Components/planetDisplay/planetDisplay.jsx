@@ -2,7 +2,6 @@ import classes from "./planetDisplay.module.css";
 
 export default function PlanetDisplay(){
 
-
   return(
     <div className={classes.planetDisplay}>
       <h3 style={{opacity: 0.5, float: 'left', width: '49%'}}>Asteroid: AX62</h3>

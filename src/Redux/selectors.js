@@ -46,3 +46,13 @@ export const getIncomePerSecond = store => {
 export const getResearched = store => {
   return store.upgrades;
 }
+
+export const listenCommunications = store => {
+  // return the first message from communications that has not yet been received
+  // for (let i = 0; i < store.communications.length; i++) {
+  //   if(!store.communications[i].received){
+  //     return {...store.communications[i], index: i}
+  //   }
+  // }
+  return store.communications.slice(-20).reverse();
+}

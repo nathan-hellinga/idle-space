@@ -24,6 +24,7 @@ export default function ResearchPanel(){
                 subtitle={item.subtitle}
                 price={item.basePrice}
                 disabled={resources < item.basePrice}
+                altText={`${item.multiplier}x multiplier`}
                 onPurchase={() => {
                   dispatch(decreaseResources(item.basePrice))
                   dispatch(buyUpgrade(item.id));
