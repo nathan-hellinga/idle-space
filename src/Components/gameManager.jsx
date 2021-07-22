@@ -47,9 +47,9 @@ export default function GameManager(){
     const research = ResearchObjects.find(x => x.id === upgrades[upgrades.length-1]);
     if(research && research.message){
       // check to make sure we haven't already sent that message
-      if(prevUpgrades.current.length > 0 && prevUpgrades.current[prevUpgrades.current.length -1] === research.id){
+      if(prevUpgrades.current.length > 0 && !prevUpgrades.current[prevUpgrades.current.length -1] === research.id){
         dispatch(addMessage(research.message));
-        prevUpgrades.current.push(research.id)
+        prevUpgrades.current = [...prevUpgrades, research.id];
       }
     }
   }, [upgrades])
