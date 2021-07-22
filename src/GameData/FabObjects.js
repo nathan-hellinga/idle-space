@@ -12,7 +12,7 @@ export const fabObjects = {
     title: 'Drone',
     subtitle: "Orbits the target and automatically mines using lasers",
     basePrice: 500,
-    costMultiFactor: 1.07,
+    costMultiFactor: 1.08,
     baseIncome: 10,
     message: "Drones will be able to get in much closer the the surface of the object."
   },
@@ -20,7 +20,7 @@ export const fabObjects = {
     title: 'Probe',
     subtitle: "Launch a probe to drill core samples from the surface",
     basePrice: 5500,
-    costMultiFactor: 1.08,
+    costMultiFactor: 1.09,
     baseIncome: 75,
     message: ""
   },

@@ -28,10 +28,10 @@ export default function FabricatePanel() {
                   subtitle={details.subtitle}
                   altText={`${FormatInt((currentIncomeSources[details.key]/sources[details.key]) || details.baseIncome)}/s - ${(currentIncomeSources[details.key] / incomePerSecond * 100 || 0).toFixed(1)}% of total`}
                   owned={sources[details.key]}
-                  price={FabricatePricingFunction(details.basePrice, sources[details.key])}
-                  disabled={resources < FabricatePricingFunction(details.basePrice, sources[details.key])}
+                  price={FabricatePricingFunction(details, sources[details.key])}
+                  disabled={resources < FabricatePricingFunction(details, sources[details.key])}
                   onPurchase={() => {
-                    dispatch(decreaseResources(FabricatePricingFunction(details.basePrice, sources[details.key])))
+                    dispatch(decreaseResources(FabricatePricingFunction(details, sources[details.key])))
                     dispatch(addIncomeSource(details.key));
                   }}
                 />
