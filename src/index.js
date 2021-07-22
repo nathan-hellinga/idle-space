@@ -4,16 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
-import store from "./Redux/store";
+import {store, persistor} from "./Redux/store";
 import { MuiThemeProvider} from "@material-ui/core";
 import darkTheme from "./Theme/darkTheme";
+import {PersistGate} from "redux-persist/integration/react";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <MuiThemeProvider theme={darkTheme}>
-        <App/>
-      </MuiThemeProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <MuiThemeProvider theme={darkTheme}>
+          <App/>
+        </MuiThemeProvider>
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

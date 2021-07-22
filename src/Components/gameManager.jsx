@@ -6,6 +6,7 @@ import {useShallowEqualSelector} from "../Hooks/useShallowEqualSelector";
 import {addMessage} from "../Redux/actions";
 import {fabObjects} from "../GameData/FabObjects";
 import {ResearchObjects} from "../GameData/ResearchObjects";
+import useAnimationFrame from "../Hooks/useAnimationFrame";
 
 /**
  * Controls the timing of the game, ticks once every 25th of a second
@@ -21,11 +22,9 @@ export default function GameManager(){
   const upgrades = useShallowEqualSelector(getResearched);
 
   // Game global tick rate
-  useEffect(() => {
-    const interval = setInterval(() => {
-      dispatch({type: INCREASE_RESOURCES, payload: incomePerSecond/25});
-    }, 40);
-    return () => clearInterval(interval);
+  useAnimationFrame(({time, delta}) => {
+    // console.log(time);
+    dispatch({type: INCREASE_RESOURCES, payload: incomePerSecond*delta});
   })
 
   // when we buy the first fab item, send that message to the queue
@@ -46,7 +45,7 @@ export default function GameManager(){
   // when we buy an upgrade, send that message to the queue
   useEffect(() => {
     const research = ResearchObjects.find(x => x.id === upgrades[upgrades.length-1]);
-    if(research){
+    if(research && research.message){
       dispatch(addMessage(research.message))
     }
   }, [upgrades])

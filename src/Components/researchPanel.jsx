@@ -13,6 +13,18 @@ export default function ResearchPanel(){
   const researched = useSelector(getResearched);
   const sources = useSelector(getIncomeSources);
 
+
+  const generateAltText = (multi) => {
+    if(multi >= 2){
+      return `${multi}x multiplier`
+    }else{
+      // multi must be between 1 - 2
+      multi -= 1;
+      multi *= 100;
+      return `${multi.toFixed(0)}% increase`
+    }
+  }
+
   return(
     <Grid container spacing={1} style={{marginTop: '10px'}}>
       {ResearchObjects.map(item => {
@@ -24,7 +36,7 @@ export default function ResearchPanel(){
                 subtitle={item.subtitle}
                 price={item.basePrice}
                 disabled={resources < item.basePrice}
-                altText={`${item.multiplier}x multiplier`}
+                altText={generateAltText(item.multiplier)}
                 onPurchase={() => {
                   dispatch(decreaseResources(item.basePrice))
                   dispatch(buyUpgrade(item.id));
