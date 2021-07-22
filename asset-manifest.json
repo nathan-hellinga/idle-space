@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/idle-space/static/css/main.122b27c5.chunk.css",
-    "main.js": "/idle-space/static/js/main.64363477.chunk.js",
-    "main.js.map": "/idle-space/static/js/main.64363477.chunk.js.map",
+    "main.js": "/idle-space/static/js/main.50f6bf4e.chunk.js",
+    "main.js.map": "/idle-space/static/js/main.50f6bf4e.chunk.js.map",
     "runtime-main.js": "/idle-space/static/js/runtime-main.10c73055.js",
     "runtime-main.js.map": "/idle-space/static/js/runtime-main.10c73055.js.map",
-    "static/js/2.b8f0d7af.chunk.js": "/idle-space/static/js/2.b8f0d7af.chunk.js",
-    "static/js/2.b8f0d7af.chunk.js.map": "/idle-space/static/js/2.b8f0d7af.chunk.js.map",
+    "static/js/2.2b524a17.chunk.js": "/idle-space/static/js/2.2b524a17.chunk.js",
+    "static/js/2.2b524a17.chunk.js.map": "/idle-space/static/js/2.2b524a17.chunk.js.map",
     "static/js/3.38e3de68.chunk.js": "/idle-space/static/js/3.38e3de68.chunk.js",
     "static/js/3.38e3de68.chunk.js.map": "/idle-space/static/js/3.38e3de68.chunk.js.map",
     "index.html": "/idle-space/index.html",
     "static/css/main.122b27c5.chunk.css.map": "/idle-space/static/css/main.122b27c5.chunk.css.map",
-    "static/js/2.b8f0d7af.chunk.js.LICENSE.txt": "/idle-space/static/js/2.b8f0d7af.chunk.js.LICENSE.txt"
+    "static/js/2.2b524a17.chunk.js.LICENSE.txt": "/idle-space/static/js/2.2b524a17.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.10c73055.js",
-    "static/js/2.b8f0d7af.chunk.js",
+    "static/js/2.2b524a17.chunk.js",
     "static/css/main.122b27c5.chunk.css",
-    "static/js/main.64363477.chunk.js"
+    "static/js/main.50f6bf4e.chunk.js"
   ]
 }
