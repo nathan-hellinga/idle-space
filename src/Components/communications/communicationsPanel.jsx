@@ -11,7 +11,16 @@ export default function CommunicationsPanel(){
   const dispatch = useDispatch();
   const messages = useShallowEqualSelector(listenCommunications);
 
+  const formatMsg = (msg) => {
+    if(msg.startsWith('!')){
+      return msg.substring(1);
+    }
+    return msg;
+  }
 
+  const isImportant = (msg) => {
+    return msg.startsWith('!');
+  }
 
   console.log(messages);
   return(
@@ -21,7 +30,8 @@ export default function CommunicationsPanel(){
           <Grid item xs={12} key={msg.index}>
             {
               msg.received ?
-                <span className={classes.message} dangerouslySetInnerHTML={{__html: msg.message}} />
+                <span className={[classes.message, isImportant(msg.message) && classes.priorityMessage].join(" ")}
+                      dangerouslySetInnerHTML={{__html: formatMsg(msg.message)}} />
                 :
                 <Typist
                   startDelay={1}
@@ -34,7 +44,8 @@ export default function CommunicationsPanel(){
                     hideWhenDoneDelay: 250,
                   }}
                 >
-                  <span className={classes.message}>{msg.message}</span>
+                  <span className={[classes.message, isImportant(msg.message) && classes.priorityMessage].join(" ")}>
+                    {formatMsg(msg.message)}</span>
                 </Typist>
             }
           </Grid>

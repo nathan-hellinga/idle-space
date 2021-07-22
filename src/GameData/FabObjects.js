@@ -38,7 +38,7 @@ export const fabObjects = {
     basePrice: 500000,
     costMultiFactor: 1.11,
     baseIncome: 850,
-    message: "We have established a proper mining facility on the surface. We can now <em>really</em> start to screw this place up."
+    message: "We have established a proper mining facility on the surface. We can now really start to screw this place up."
   },
   droneFactory: {
     title: 'Drone Factory',
@@ -46,24 +46,25 @@ export const fabObjects = {
     basePrice: 2500000,
     costMultiFactor: 1.12,
     baseIncome: 2000,
-    message: "<strong><em>Surprise! </em></strong>The factory actually does make more drones, what a deal!"
+    message: "Surprise! The factory actually does make more drones, what a deal!"
   },
   launchFacility: {
     title: 'Orbital Launch',
-    subtitle: "A proper orbital launch facility will be able to send resources much faster",
+    subtitle: "A proper orbital launch facility will allow us to get resources off the surface of this rock",
     basePrice: 10000000,
-    costMultiFactor: 1.13,
-    baseIncome: 5500,
-    message: "The only thing better than an orbital launch facility would be a space elevator and there is absolutely no way" +
-      " we would be able to build one of those all the way out here."
+    costMultiFactor: 1.14,
+    baseIncome: 2500,
+    message: "!We can now get resources into orbit and return to Earth with our spoils. With only 1 launch facility " +
+      "we won't be able to get much into orbit though. Build more launch facilities and space elevators to increase " +
+      "how much of our resources we can take back with us."
   },
   spaceElevator: {
     title: 'Space Elevator',
-    subtitle: "A space elevator can move materials to and from the astral bodies surface using no chemical propellant whatsoever",
+    subtitle: "A space elevator will help us get even more resources into orbit before we blast back to earth rich",
     basePrice: 5000000,
-    costMultiFactor: 1.14,
-    baseIncome: 8500,
-    message: "Okay well I think you just built one because I said there was no way we could. What if I said there was no way we " +
-      "could get back to earth? Not so funny now is it. ha ha"
+    costMultiFactor: 1.15,
+    baseIncome: 3500,
+    message: "The more orbital launch facilities and space elevators we have when we launch for earth the more of the resources " +
+      "we have extracted we will be able to take with us."
   },
 }

@@ -1,13 +1,18 @@
-.wrapper{
+.wrapper {
 
 }
 
-.message{
+.message {
     font-family: IBM Plex Mono;
     font-size: 0.9em;
 }
 
-.message::before{
+.priorityMessage {
+    color: var(--color-secondary);
+}
+
+.message::before {
     content: '>';
     padding-right: 15px;
 }
+

@@ -8,6 +8,7 @@ import FabricatePanel from "../../Components/fabricatePanel";
 import {increaseResources} from "../../Redux/actions";
 import ResearchPanel from "../../Components/researchPanel";
 import CommunicationsPanel from "../../Components/communications/communicationsPanel";
+import LaunchPanel from "../../Components/controls/LaunchButton/launchPanel";
 
 
 export default function Main(){
@@ -29,7 +30,8 @@ export default function Main(){
             onClick={() => dispatch(increaseResources(1))}
           >Mine resources</Button>
         <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
-        <CommunicationsPanel />
+        <LaunchPanel/>
+        <CommunicationsPanel/>
       </Grid>
       <Grid item xs={12} sm={4} md={6}>
         <div style={{height: '200px', width: '100%'}}/>
