@@ -18,8 +18,8 @@ export default function GameManager(){
   const upgrades = useShallowEqualSelector(getResearched);
 
   // initial values
-  const prevUpgrades = useRef(useSelector(getResearched));
-  const prevSources = useRef(useSelector(getIncomeSources));
+  const prevUpgrades = useRef([...upgrades]);
+  const prevSources = useRef({...sources});
 
   // Game global tick rate
   useInterval(({time, delta}) => {
