@@ -38,8 +38,7 @@ export default function ResearchPanel(){
                 disabled={resources < item.basePrice}
                 altText={generateAltText(item.multiplier)}
                 onPurchase={() => {
-                  dispatch(decreaseResources(item.basePrice))
-                  dispatch(buyUpgrade(item.id));
+                  dispatch(buyUpgrade(item.id, item.basePrice));
                 }}
               />
             </Grid>

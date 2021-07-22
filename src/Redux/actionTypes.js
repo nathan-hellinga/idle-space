@@ -1,3 +1,5 @@
+export const RESET = 'RESET';
+
 export const INCREASE_RESOURCES = "INCREASE_RESOURCES";
 export const DECREASE_RESOURCES = "DECREASE_RESOURCES";
 
