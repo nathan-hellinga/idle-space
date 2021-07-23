@@ -1,0 +1,13 @@
+.launchText {
+    margin: 0;
+    font-weight: bold;
+    /*background: -webkit-linear-gradient(#eee, #7b7b7b);*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+}
+
+.subtext{
+    font-size: 0.85em;
+    opacity: 0.8;
+    margin-bottom: 0.5em;
+}

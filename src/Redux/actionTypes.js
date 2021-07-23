@@ -9,3 +9,8 @@ export const BUY_UPGRADE = "BUY_UPGRADE";
 
 export const ADD_MESSAGE = "ADD_MESSAGE";
 export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
+export const CLEAR_MESSAGES = "CLEAR_MESSAGES";
+
+export const TOGGLE_PAUSE = "TOGGLE_PAUSE";
+export const PRESTIGE = "PRESTIGE";
+export const CLOSE_STORY = "CLOSE_STORY";

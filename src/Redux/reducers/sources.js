@@ -1,4 +1,4 @@
-import {ADD_INCOME_SOURCE} from "../actionTypes";
+import {ADD_INCOME_SOURCE, PRESTIGE} from "../actionTypes";
 import {fabObjects} from "../../GameData/FabObjects";
 
 
@@ -15,6 +15,9 @@ export default function (state = initialState, action) {
         ...state,
         [action.payload.type]: state[action.payload.type] += 1
       };
+    }
+    case PRESTIGE:{
+      return initialState;
     }
     default:
       return state;

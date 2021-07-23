@@ -3,7 +3,7 @@ import {
   ADD_INCOME_SOURCE,
   DECREASE_RESOURCES,
   BUY_UPGRADE,
-  ADD_MESSAGE, RECEIVE_MESSAGE,
+  ADD_MESSAGE, RECEIVE_MESSAGE, TOGGLE_PAUSE, CLEAR_MESSAGES, PRESTIGE, CLOSE_STORY,
 } from "./actionTypes";
 
 export const increaseResources = (amount) => ({
@@ -49,5 +49,30 @@ export const receiveMessage = (index) => ({
   type: RECEIVE_MESSAGE,
   payload: {
     index,
+  }
+})
+
+export const clearMessages = (index) => ({
+  type: CLEAR_MESSAGES,
+  payload: {}
+})
+
+export const togglePaused = () => ({
+  type: TOGGLE_PAUSE,
+  payload: {}
+})
+
+export const prestige = (currentPrestige, keepPercent) => ({
+  type: PRESTIGE,
+  payload: {
+    currentPrestige,
+    keepPercent
+  }
+})
+
+export const closeStory = (type) => ({
+  type: CLOSE_STORY,
+  payload: {
+    type
   }
 })

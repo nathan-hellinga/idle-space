@@ -1,0 +1,31 @@
+.backdrop{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    background-color: rgba(15,15,15,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    margin: 1em;
+    padding: 1em;
+    background-color: var(--color-background-accent);
+    border: 1px solid gray;
+}
+
+.actions{
+    justify-content: flex-end;
+    padding-top: 0.5em;
+    border-top: 1px solid gray
+}
+
+@media only screen and (min-width: 900px) {
+    .wrapper {
+        width: 500px;
+    }
+}

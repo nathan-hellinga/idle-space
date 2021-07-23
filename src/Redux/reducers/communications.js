@@ -1,4 +1,4 @@
-import {ADD_INCOME_SOURCE, ADD_MESSAGE, BUY_UPGRADE, RECEIVE_MESSAGE} from "../actionTypes";
+import {ADD_INCOME_SOURCE, ADD_MESSAGE, BUY_UPGRADE, CLEAR_MESSAGES, PRESTIGE, RECEIVE_MESSAGE} from "../actionTypes";
 import {fabObjects} from "../../GameData/FabObjects";
 import {ResearchObjects} from "../../GameData/ResearchObjects";
 
@@ -27,6 +27,12 @@ export default function (state = initialState, action) {
         msg.received = true;
       }
       return copy;
+    }
+    case CLEAR_MESSAGES:{
+      return [];
+    }
+    case PRESTIGE:{
+      return [];
     }
     case ADD_INCOME_SOURCE: {
       const {type, count, price} = action.payload;
