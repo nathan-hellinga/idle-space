@@ -58,10 +58,27 @@ export const getColonyResources = store => {
 
 export const getColonyResourcesPerSecond = store => {
   let incomes = {};
+
+  loop:
   for (const [key, value] of Object.entries(store.colony.assignments)) {
     const details = colonyObjects[key];
     if(!details) continue;
-    incomes[details.output] = value * details.outputRate;
+
+    // if there are inputs, make sure we have enough to proceed else abort
+    let incomesCopy = {...incomes}; // change the copy, if we cant pay all inputs the copy is discarded
+    for (const input of details.inputs) {
+      const inputRate = input.numerator/input.denominator * value;
+      if((store.colony.resources[input.name] ?? 0) < inputRate){
+        continue loop;
+      }else{
+        incomesCopy[input.name] = (incomesCopy[input.name] ?? 0) - inputRate;
+      }
+    }
+    incomes = incomesCopy;  // since we can pay all inputs, we use the copy
+    for (const output of details.outputs) {
+      const outputRate = output.numerator/output.denominator * value;
+      incomes[output.name] = (incomesCopy[output.name] ?? 0) + outputRate;
+    }
   }
   return incomes;
 }
