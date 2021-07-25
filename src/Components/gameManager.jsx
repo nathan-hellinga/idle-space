@@ -27,7 +27,7 @@ export default function GameManager() {
       }, {});
       dispatch(increaseColonyResources(payload))
     }
-  }, 0.04)
+  }, 40)
 
 
   // define some global functions for the console;
