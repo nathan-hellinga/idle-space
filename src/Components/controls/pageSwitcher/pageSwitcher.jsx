@@ -7,7 +7,6 @@ function PageSwitcher(props) {
   const location = useLocation();
   const history = useHistory();
 
-  console.log(location.pathname);
   return (
     <div className={classes.wrapper}>
       <ButtonGroup fullWidth>

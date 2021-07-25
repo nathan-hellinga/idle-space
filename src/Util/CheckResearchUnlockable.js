@@ -1,6 +1,6 @@
 import {ResearchObjects} from "../GameData/ResearchObjects";
 
-export default function (id, purchasedUpgrades, incomeSources) {
+export default function checkResearchUnlockable(id, purchasedUpgrades, incomeSources) {
   // if we already researched it return false
   if(purchasedUpgrades.some(x => x === id)) return false;
 

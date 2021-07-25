@@ -9,7 +9,7 @@ export const ResearchObjects = [
     message: "Double the size of the nets, if you make these nets any bigger we might actually catch some space fish.",
     multiplier: 3,
     fabType: 'spaceNet',
-    basePrice: 5000,
+    basePrice: 10000,
     dependencies: []
   },
   {
@@ -17,9 +17,9 @@ export const ResearchObjects = [
     title: 'Improved Space Nets II',
     subtitle: "Have you have tried eating soup off a plate? Yeah well we made the nets more like bowls now",
     message: "Did that make sense? Bowls?... the nets are deeper now so we can catch bigger stuff, kind of like a baseball glove.",
-    multiplier: 5,
+    multiplier: 4,
     fabType: 'spaceNet',
-    basePrice: 10000,
+    basePrice: 30000,
     dependencies: ['sn1']
   },
   {
@@ -30,7 +30,7 @@ export const ResearchObjects = [
       "stronger now so we can catch pretty much anything.",
     multiplier: 8,
     fabType: 'spaceNet',
-    basePrice: 20000,
+    basePrice: 150000,
     dependencies: ['sn2']
   },
   // DRONES
@@ -41,7 +41,7 @@ export const ResearchObjects = [
     message: "We didnt actually improve anything, we just put extra batteries on them its not astrophysics.",
     multiplier: 3,
     fabType: 'drone',
-    basePrice: 12500,
+    basePrice: 125000,
     dependencies: []
   },
   {
@@ -51,7 +51,7 @@ export const ResearchObjects = [
     message: "Would you believe it if I told you before this upgrade I was controlling every single one of these drones?",
     multiplier: 5,
     fabType: 'drone',
-    basePrice: 22500,
+    basePrice: 225000,
     dependencies: ['dr1']
   },
   // PROBE
@@ -63,7 +63,7 @@ export const ResearchObjects = [
       "also... check yourself regularly.",
     multiplier: 2,
     fabType: 'probe',
-    basePrice: 137500,
+    basePrice: 1375000,
     dependencies: []
   },
   {
@@ -74,7 +74,7 @@ export const ResearchObjects = [
       "its drilling mantle. Pretty clever.",
     multiplier: 3,
     fabType: 'probe',
-    basePrice: 687500,
+    basePrice: 6875000,
     dependencies: ['pr1']
   },
   // PROBE
@@ -87,7 +87,7 @@ export const ResearchObjects = [
       "I think we might just end up with depressed probes.",
     multiplier: 2,
     fabType: 'lander',
-    basePrice: 2125000,
+    basePrice: 21250000,
     dependencies: []
   },
   {
@@ -97,29 +97,28 @@ export const ResearchObjects = [
     message: "Depressed little surface trucks... but with accessories!",
     multiplier: 2,
     fabType: 'lander',
-    basePrice: 10625000,
+    basePrice: 106250000,
     dependencies: ['ld1']
   },
   {
     id: 'mr1',
-    title: 'Improved Mining Rigs II',
+    title: 'Improved Mining Rigs I',
     subtitle: "Improve the mining capabilities of the rig with ancient alien technology",
-    message: "The ancient alien technology is... <strong>diesel</strong>... Yes technically the aliens have been dead for a while. " +
+    message: "The ancient alien technology is... diesel... Yes technically the aliens have been dead for a while. " +
       "We did say ancient.",
     multiplier: 1.5,
     fabType: 'miningRig',
-    basePrice: 30000000,
+    basePrice: 300000000,
     dependencies: []
   },
   {
     id: 'mr2',
     title: 'Improved Mining Rigs II',
     subtitle: "Improve the mining capabilities of the rig with ancient alien technology",
-    message: "The ancient alien technology is... <strong>diesel</strong>... Yes technically the aliens have been dead for a while. " +
-      "We did say ancient.",
+    message: "",
     multiplier: 2,
     fabType: 'miningRig',
-    basePrice: 150000000,
+    basePrice: 1500000000,
     dependencies: ["mr1"]
   },
   {
@@ -129,7 +128,7 @@ export const ResearchObjects = [
     message: "",
     multiplier: 1.5,
     fabType: 'droneFactory',
-    basePrice: 18750000,
+    basePrice: 187500000,
     dependencies: []
   },
   {
@@ -139,7 +138,7 @@ export const ResearchObjects = [
     message: "",
     multiplier: 1.5,
     fabType: 'droneFactory',
-    basePrice: 93750000,
+    basePrice: 937500000,
     dependencies: ["df1"]
   },
   {
@@ -149,7 +148,7 @@ export const ResearchObjects = [
     message: "",
     multiplier: 2,
     fabType: 'launchFacility',
-    basePrice: 220000000,
+    basePrice: 2200000000,
     dependencies: []
   },
   {
@@ -159,7 +158,7 @@ export const ResearchObjects = [
     message: "",
     multiplier: 1.5,
     fabType: 'launchFacility',
-    basePrice: 760000000,
+    basePrice: 7600000000,
     dependencies: ["lf1"]
   },
   {
@@ -169,7 +168,7 @@ export const ResearchObjects = [
     message: "",
     multiplier: 1.25,
     fabType: 'spaceElevator',
-    basePrice: 2000000000,
+    basePrice: 20000000000,
     dependencies: []
   },
   {
@@ -179,7 +178,7 @@ export const ResearchObjects = [
     message: "",
     multiplier: 1.25,
     fabType: 'spaceElevator',
-    basePrice: 4000000000,
+    basePrice: 40000000000,
     dependencies: ['se1']
   },
 ]

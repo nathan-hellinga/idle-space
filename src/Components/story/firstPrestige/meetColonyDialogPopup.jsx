@@ -42,7 +42,7 @@ function MeetColonyDialogPopup({open}) {
           <span>We thought we were the only humans left in the universe</span>
           <br/><br/>
           <Typist.Delay ms={1000}/>
-          <span>Around 3 years ago the world fell into a civil war that ended up destroying Earth and most of Mars.
+          <span>3 years ago the world fell into a civil war that ended up destroying Earth and most of Mars.
             We are only 8 people surviving deep under the martian surface. We hae no resources to rebuild and our space port was destroyed.
             Without help we won't survive longer than a couple more miserable years.</span>
           <br/><br/>
@@ -50,7 +50,7 @@ function MeetColonyDialogPopup({open}) {
           <span>Please...</span>
           <br/><br/>
           <Typist.Delay ms={2000}/>
-          <span>help us...</span>
+          <span>Help us...</span>
           <br/><br/>
 
         </Typist>

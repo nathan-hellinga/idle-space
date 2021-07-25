@@ -4,7 +4,7 @@ import {getIncomeSources, getResearched, getResources} from "../Redux/selectors"
 import {ResearchObjects} from "../GameData/ResearchObjects";
 import CheckResearchUnlockable from "../Util/CheckResearchUnlockable";
 import Purchasable from "./controls/purchasable/purchasable";
-import {buyUpgrade, decreaseResources} from "../Redux/actions";
+import {buyUpgrade} from "../Redux/actions";
 
 
 export default function ResearchPanel(){
@@ -12,6 +12,7 @@ export default function ResearchPanel(){
   const resources = useSelector(getResources)
   const researched = useSelector(getResearched);
   const sources = useSelector(getIncomeSources);
+  const prestige = useSelector(state => state.game.prestige)
 
 
   const generateAltText = (multi) => {
@@ -38,7 +39,7 @@ export default function ResearchPanel(){
                 disabled={resources < item.basePrice}
                 altText={generateAltText(item.multiplier)}
                 onPurchase={() => {
-                  dispatch(buyUpgrade(item.id, item.basePrice));
+                  dispatch(buyUpgrade(item.id, item.basePrice, prestige));
                 }}
               />
             </Grid>

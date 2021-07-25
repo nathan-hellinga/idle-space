@@ -7,7 +7,7 @@ const initialState = Object.keys(fabObjects).reduce((a, r) => {
   return a;
 }, {})
 
-export default function (state = initialState, action) {
+export default function sources(state = initialState, action) {
 
   switch (action.type) {
     case ADD_INCOME_SOURCE: {

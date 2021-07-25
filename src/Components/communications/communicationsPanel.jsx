@@ -3,7 +3,7 @@ import {useShallowEqualSelector} from "../../Hooks/useShallowEqualSelector";
 import {listenCommunications} from "../../Redux/selectors";
 import Typist from 'react-typist';
 import {Grid} from "@material-ui/core";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {receiveMessage} from "../../Redux/actions";
 
 
@@ -22,7 +22,6 @@ export default function CommunicationsPanel(){
     return msg.startsWith('!');
   }
 
-  console.log(messages);
   return(
     <div className={classes.wrapper}>
       <Grid container direction={'column'} spacing={2}>

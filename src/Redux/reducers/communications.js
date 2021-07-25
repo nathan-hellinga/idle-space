@@ -15,7 +15,7 @@ const initialState = [
   },
 ];
 
-export default function (state = initialState, action) {
+export default function communications(state = initialState, action) {
   switch (action.type) {
     case ADD_MESSAGE: {
       return [...state, {...action.payload, received: false, index: state.length}];
@@ -35,7 +35,8 @@ export default function (state = initialState, action) {
       return [];
     }
     case ADD_INCOME_SOURCE: {
-      const {type, count, price} = action.payload;
+      const {type, count, prestige} = action.payload;
+      if(prestige > 0) return state;
       if(count === 0 && fabObjects[type].message){
         return [...state, {message: fabObjects[type].message, delay:3, received: false, index: state.length}];
       }else{
@@ -43,7 +44,9 @@ export default function (state = initialState, action) {
       }
     }
     case BUY_UPGRADE:{
-      const {id, price} = action.payload;
+      const {id, prestige} = action.payload;
+      if(prestige > 0) return state;
+
       const research = ResearchObjects.find(x => x.id === id);
       if(research?.message){
         return [...state, {message: research.message, delay:3, received: false, index: state.length}];

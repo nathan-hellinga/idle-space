@@ -1,5 +1,6 @@
 import {fabObjects} from "../GameData/FabObjects";
 import {ResearchObjects} from "../GameData/ResearchObjects";
+import {colonyObjects} from "../GameData/colonyObjects";
 
 export const getResources = store => store.resources.current;
 export const getIncomeSources = store => store.sources;
@@ -45,6 +46,23 @@ export const getIncomePerSecond = store => {
 
 export const getResearched = store => {
   return store.upgrades;
+}
+
+export const getColonyResources = store => {
+  let resourcesCopy = store.colony.resources;
+  for (const [key, value] of Object.entries(resourcesCopy)) {
+    resourcesCopy[key] = Math.floor(value);
+  }
+  return resourcesCopy;
+}
+
+export const getColonyResourcesPerSecond = store => {
+  let incomes = {};
+  for (const [key, value] of Object.entries(store.colony.assignments)) {
+    const details = colonyObjects[key];
+    incomes[key] = value * details.outputRate;
+  }
+  return incomes;
 }
 
 export const listenCommunications = store => {

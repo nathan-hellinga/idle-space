@@ -1,11 +1,18 @@
-import {ADD_INCOME_SOURCE, BUY_UPGRADE, DECREASE_RESOURCES, INCREASE_RESOURCES, PRESTIGE} from "../actionTypes";
+import {
+  ADD_BUILDING,
+  ADD_INCOME_SOURCE,
+  BUY_UPGRADE,
+  DECREASE_RESOURCES,
+  INCREASE_RESOURCES,
+  PRESTIGE
+} from "../actionTypes";
 
 const initialState = {
   current: 0,
   colonyResources: 0
 };
 
-export default function (state = initialState, action) {
+export default function resources(state = initialState, action) {
   switch (action.type) {
     case INCREASE_RESOURCES: {
       return {
@@ -29,6 +36,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         current: Math.max(state.current -= action.payload.price, 0)
+      }
+    }
+    case ADD_BUILDING:{
+      return {
+        ...state,
+        colonyResources: state.colonyResources - action.payload.price
       }
     }
     case PRESTIGE: {

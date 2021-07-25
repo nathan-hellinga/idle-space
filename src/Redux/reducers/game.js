@@ -8,7 +8,7 @@ const initialState = {
   }
 };
 
-export default function (state = initialState, action) {
+export default function game(state = initialState, action) {
   switch (action.type) {
     case TOGGLE_PAUSE: {
       return {

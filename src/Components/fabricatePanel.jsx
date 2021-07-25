@@ -14,6 +14,7 @@ export default function FabricatePanel() {
   const incomePerSecond = useSelector(getIncomePerSecond);
   const currentIncomeSources = useSelector(getSourceCurrentIncomes);
   const resources = useSelector(getResources)
+  const prestige = useSelector(state => state.game.prestige);
 
   const mapObject = Object.entries(fabObjects).map(([key, value]) => ({...value, key}))
 
@@ -31,8 +32,7 @@ export default function FabricatePanel() {
                   price={FabricatePricingFunction(details, sources[details.key])}
                   disabled={resources < FabricatePricingFunction(details, sources[details.key])}
                   onPurchase={() => {
-                    // dispatch(decreaseResources(FabricatePricingFunction(details, sources[details.key])))
-                    dispatch(addIncomeSource(details.key, sources[details.key], FabricatePricingFunction(details, sources[details.key])));
+                    dispatch(addIncomeSource(details.key, sources[details.key], FabricatePricingFunction(details, sources[details.key]), prestige));
                   }}
                 />
               </Grid>

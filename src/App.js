@@ -20,9 +20,13 @@ function App() {
         }
 
         <Switch>
-          <Route path={'/colony'}>
-            <Colony/>
-          </Route>
+          {
+            prestige > 0 &&
+            <Route path={'/colony'}>
+              <Colony/>
+            </Route>
+          }
+
           <Route>
             <Main/>
           </Route>
