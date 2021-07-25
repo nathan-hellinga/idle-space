@@ -22,9 +22,10 @@ export default function colony(state = initialState, action) {
       for (const [key, value] of Object.entries(action.payload.increases)) {
         resourcesCopy[key] = (resourcesCopy[key] ?? 0) + value;
       }
+      if(Object.keys(resourcesCopy).length === 0) return state;
       return {
         ...state,
-        resources: resourcesCopy
+        resources: {...resourcesCopy}
       }
     }
     case DECREASE_COLONY_RESOURCE: {
@@ -32,6 +33,7 @@ export default function colony(state = initialState, action) {
       for (const [key, value] of Object.entries(action.payload.increases)) {
         resourcesCopy[key] = Math.max((resourcesCopy[key] ?? 0) - value, 0);
       }
+      if(Object.keys(resourcesCopy).length === 0) return state;
       return {
         ...state,
         resources: resourcesCopy
@@ -49,6 +51,10 @@ export default function colony(state = initialState, action) {
         resources: {
           ...state.resources,
           [details.output]: state.resources[details.output] ?? 0 // if it is undefined, initialize it to 0
+        },
+        assignments: {
+          ...state.assignments,
+          [type]: state.assignments[type] ?? 0
         }
       }
     }

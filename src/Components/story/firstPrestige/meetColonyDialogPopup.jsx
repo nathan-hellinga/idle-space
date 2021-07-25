@@ -15,7 +15,7 @@ function MeetColonyDialogPopup({open}) {
   return (
     <Modal open actions={[{
       label: "Give Resources",
-      disabled: !doneTyping,
+      // disabled: !doneTyping,
       onClick: () => dispatch(closeStory('meetColony'))
     }]}>
       <div className={classes.typistWrapper}>

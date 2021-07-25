@@ -1,11 +1,10 @@
 import React from 'react';
 import {useShallowEqualSelector} from "../../Hooks/useShallowEqualSelector";
-import {getColonyResources} from "../../Redux/selectors";
+import {getColonistAssignments, getColonyResources} from "../../Redux/selectors";
 
 function ColonyResources() {
-  let resources = useShallowEqualSelector(getColonyResources)
+  let resources = useShallowEqualSelector(getColonyResources);
 
-  console.log(resources);
   return (
     <div>
       <table style={{width: '100%', textAlign: 'left'}}>

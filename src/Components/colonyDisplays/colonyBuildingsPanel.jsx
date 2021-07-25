@@ -1,13 +1,10 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {getIncomePerSecond, getIncomeSources, getResources, getSourceCurrentIncomes} from "../../Redux/selectors";
-import {fabObjects} from "../../GameData/FabObjects";
+import {useDispatch} from "react-redux";
 import {colonyObjects} from "../../GameData/colonyObjects";
 import {Grid} from "@material-ui/core";
 import Purchasable from "../controls/purchasable/purchasable";
-import FormatInt from "../../Util/FormatInt";
 import FabricatePricingFunction from "../../Util/FabricatePricingFunction";
-import {addBuilding, addIncomeSource} from "../../Redux/actions";
+import {addBuilding} from "../../Redux/actions";
 import {useShallowEqualSelector} from "../../Hooks/useShallowEqualSelector";
 
 function ColonyBuildingsPanel() {
@@ -30,7 +27,7 @@ function ColonyBuildingsPanel() {
                 <Purchasable
                   title={details.title}
                   subtitle={details.subtitle}
-                  altText={`produces ${details.outputRate} ${details.output}/s/worker`}
+                  altText={`${details.outputRate} ${details.output} /worker /second`}
                   owned={buildings[details.key]}
                   price={FabricatePricingFunction(details, buildings[details.key] ?? 0)}
                   disabled={resources < FabricatePricingFunction(details, buildings[details.key])}

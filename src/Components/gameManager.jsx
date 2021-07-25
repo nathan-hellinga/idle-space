@@ -25,6 +25,7 @@ export default function GameManager() {
         a[key] = value*delta;
         return a;
       }, {});
+      // console.log(payload);
       dispatch(increaseColonyResources(payload))
     }
   }, 0.04)

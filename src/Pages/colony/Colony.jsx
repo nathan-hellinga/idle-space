@@ -5,6 +5,7 @@ import classes from "./colony.module.css";
 import ColonyOverview from "../../Components/colonyDisplays/colonyOverview";
 import ColonyResources from "../../Components/colonyDisplays/colonyResources";
 import ColonyBuildingsPanel from "../../Components/colonyDisplays/colonyBuildingsPanel";
+import ColonyAssignmentsPanel from "../../Components/colonyDisplays/assignments/colonyAssignmentsPanel";
 
 function Colony() {
   return (
@@ -19,7 +20,7 @@ function Colony() {
         <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
         <ColonyResources />
         <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
-
+        <ColonyAssignmentsPanel />
       </Grid>
       <Grid item md={4}>
         <h1 style={{margin: 0}}>Buildings</h1>

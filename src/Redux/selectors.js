@@ -49,7 +49,7 @@ export const getResearched = store => {
 }
 
 export const getColonyResources = store => {
-  let resourcesCopy = store.colony.resources;
+  let resourcesCopy = {...store.colony.resources};
   for (const [key, value] of Object.entries(resourcesCopy)) {
     resourcesCopy[key] = Math.floor(value);
   }
@@ -60,17 +60,16 @@ export const getColonyResourcesPerSecond = store => {
   let incomes = {};
   for (const [key, value] of Object.entries(store.colony.assignments)) {
     const details = colonyObjects[key];
-    incomes[key] = value * details.outputRate;
+    if(!details) continue;
+    incomes[details.output] = value * details.outputRate;
   }
   return incomes;
 }
 
+export const getColonistAssignments = store => {
+  return store.colony.assignments;
+}
+
 export const listenCommunications = store => {
-  // return the first message from communications that has not yet been received
-  // for (let i = 0; i < store.communications.length; i++) {
-  //   if(!store.communications[i].received){
-  //     return {...store.communications[i], index: i}
-  //   }
-  // }
   return store.communications.slice(-20).reverse();
 }
