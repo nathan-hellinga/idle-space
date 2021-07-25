@@ -1,9 +1,11 @@
 import React from 'react';
 import {useShallowEqualSelector} from "../../Hooks/useShallowEqualSelector";
-import {getColonistAssignments, getColonyResources} from "../../Redux/selectors";
+import {getColonyResources} from "../../Redux/selectors";
 
 function ColonyResources() {
   let resources = useShallowEqualSelector(getColonyResources);
+
+
 
   return (
     <div>

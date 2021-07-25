@@ -30,7 +30,7 @@ export const ResearchObjects = [
       "stronger now so we can catch pretty much anything.",
     multiplier: 8,
     fabType: 'spaceNet',
-    basePrice: 150000,
+    basePrice: 550000,
     dependencies: ['sn2']
   },
   // DRONES

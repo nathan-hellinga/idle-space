@@ -18,18 +18,22 @@ const initialState = {
 export default function colony(state = initialState, action) {
   switch (action.type) {
     case INCREASE_COLONY_RESOURCE: {
-      // let resourcesCopy = {...state.resources};
+      let resourcesCopy = {...state.resources};
       for (const [key, value] of Object.entries(action.payload.increases)) {
-        state.resources[key] = (state.resources[key] ?? 0) + value;
+        resourcesCopy[key] = (state.resources[key] ?? 0) + value;
       }
-      return state;
+      return {
+        ...state,
+        resources: resourcesCopy
+      };
     }
     case DECREASE_COLONY_RESOURCE: {
       let resourcesCopy = {...state.resources};
-      for (const [key, value] of Object.entries(action.payload.increases)) {
+      for (const [key, value] of Object.entries(action.payload.decreases)) {
+        if(!resourcesCopy[key]) continue;
         resourcesCopy[key] = Math.max((resourcesCopy[key] ?? 0) - value, 0);
       }
-      if(Object.keys(resourcesCopy).length === 0) return state;
+      // if(Object.keys(resourcesCopy).length === 0) return state;
       return {
         ...state,
         resources: resourcesCopy
