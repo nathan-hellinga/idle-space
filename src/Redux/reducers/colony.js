@@ -1,5 +1,5 @@
 import {
-  ADD_BUILDING,
+  ADD_BUILDING, ADD_COLONIST,
   ASSIGN_COLONIST,
   DECREASE_COLONY_RESOURCE,
   INCREASE_COLONY_RESOURCE,
@@ -17,6 +17,12 @@ const initialState = {
 
 export default function colony(state = initialState, action) {
   switch (action.type) {
+    case ADD_COLONIST:{
+      return {
+        ...state,
+        population: Math.max(state.population + action.payload.count, 1)
+      }
+    }
     case INCREASE_COLONY_RESOURCE: {
       let resourcesCopy = {...state.resources};
       for (const [key, value] of Object.entries(action.payload.increases)) {

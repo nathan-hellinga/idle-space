@@ -16,8 +16,8 @@ function ColonyOverview() {
   return (
     <div style={{paddingTop: '20px'}}>
       <h1 style={{margin: 0, float: "left"}}>Mars Colony</h1>
-      <h2 style={{marginTop: 0, marginBottom: 0, opacity: 0.5, textAlign: 'right'}}>{resources} - Building Materials</h2>
-      <h2 style={{marginTop: 0, marginBottom: 0, opacity: 0.5, textAlign: 'right'}}>{population} ({population - totalAssigned()}) - Population</h2>
+      <h3 style={{marginTop: 0, marginBottom: 0, opacity: 0.5, textAlign: 'right'}}>{resources} - Orbital Resources</h3>
+      <h3 style={{marginTop: 0, marginBottom: 0, opacity: 0.5, textAlign: 'right'}}>{population} ({population - totalAssigned()}) - Population</h3>
     </div>
   );
 }

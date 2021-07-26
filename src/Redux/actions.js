@@ -1,5 +1,5 @@
 import {
-  ADD_BUILDING,
+  ADD_BUILDING, ADD_COLONIST,
   ADD_INCOME_SOURCE,
   ADD_MESSAGE,
   ASSIGN_COLONIST,
@@ -85,6 +85,13 @@ export const closeStory = (type) => ({
   type: CLOSE_STORY,
   payload: {
     type
+  }
+})
+
+export const addColonist = (count) => ({
+  type: ADD_COLONIST,
+  payload: {
+    count
   }
 })
 

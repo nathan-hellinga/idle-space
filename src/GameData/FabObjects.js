@@ -61,7 +61,7 @@ export const fabObjects = {
   spaceElevator: {
     title: 'Space Elevator',
     subtitle: "A space elevator will help us get even more resources into orbit before we blast back to earth rich",
-    basePrice: 5000000,
+    basePrice: 50000000,
     costMultiFactor: 1.15,
     baseIncome: 3500,
     message: "The more orbital launch facilities and space elevators we have when we launch for earth the more of the resources " +
