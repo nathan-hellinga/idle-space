@@ -3,6 +3,7 @@ import {Button, Divider, Grid} from "@material-ui/core";
 import {useDispatch, useSelector} from "react-redux";
 import classes from "./launchPanel.module.css";
 import Modal from "../modal/modal";
+import {prestige} from "../../../Redux/actions";
 import useKeepPercent from "../../../Hooks/useKeepPercent";
 
 function LaunchPanel() {
@@ -10,7 +11,6 @@ function LaunchPanel() {
   const launchFacilityCount = useSelector((state) => state.sources.launchFacility)
   const currentPrestige = useSelector(state => state.game.prestige);
   const keepPercent = useKeepPercent();
-  const prestige = useSelector(state => state.game.prestige);
 
   const [launchConfirmation, setLaunchConfirmation] = useState(false);
   const launchConfirmActions = [
@@ -44,7 +44,7 @@ function LaunchPanel() {
   return (
     <div>
       <Grid item xs={12} style={{display: "flex", flexDirection: 'column', alignItems: 'center'}}>
-        <h2 className={classes.launchText}>RETURN TO {prestige === 0 ? "EARTH" : "MARS"}</h2>
+        <h2 className={classes.launchText}>RETURN TO {currentPrestige === 0 ? "EARTH" : "MARS"}</h2>
         <span className={classes.subtext}>You will keep {roundToAppropriate(keepPercent * 100)}% of resources</span>
         <Button
           fullWidth
