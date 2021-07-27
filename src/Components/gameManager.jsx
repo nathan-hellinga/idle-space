@@ -89,7 +89,7 @@ export default function GameManager() {
         let message = "";
         switch (severity) {
           case 1: {
-            message = "A colonist has come down with a fever... ";
+            message = "A colonist has come down with a bad fever... ";
             break;
           }
           case 2: {
@@ -118,6 +118,23 @@ export default function GameManager() {
         dispatch(addMessage(message, 3))
       }
 
+      // increase colony size
+      if(!event && (Math.random() > 0.95)){
+        event = true;
+        const number = Math.ceil(Math.random() * population * 0.10);
+        dispatch(addMessage(`We found another small pocket of survivors who have agreed to join us! ${number} ${number === 1 ? 'person has' : 'people have'} joined the colony.`, 3))
+        dispatch(addColonist(number));
+      }
+
+      // random resource
+      if(!event && (Math.random() > 0.95)){
+        const keys = Object.keys(colonyResources);
+        const chosen = keys[Math.floor(Math.random()*keys.length)];
+        const amount = Math.ceil(Math.random() * population)
+        dispatch(increaseColonyResources({chosen: amount}));
+        dispatch(addMessage(`One of our people was exploring the ruins and found ${amount} ${chosen}!`, 3))
+      }
+
     }
   }, 60000)
 
@@ -129,7 +146,9 @@ export default function GameManager() {
   window.addResources = (amount) => {
     dispatch({type: INCREASE_RESOURCES, payload: amount})
   }
-  console.log("game manager render sanity check")
+  window.addMessage = (msg) => {
+    dispatch(addMessage(msg, 3))
+  }
   return (
     <>
       <MeetColonyDialogPopup/>

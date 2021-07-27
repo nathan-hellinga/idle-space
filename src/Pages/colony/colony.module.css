@@ -4,3 +4,18 @@
     align-items: stretch;
     padding-top: 50px;
 }
+
+.sidePanel{
+    max-height: 100%;
+    overflow: auto;
+}
+
+.sidePanel::-webkit-scrollbar {
+    width: 5px;
+}
+.sidePanel::-webkit-scrollbar-track {
+    background: var(--color-background-accent);
+}
+.sidePanel::-webkit-scrollbar-thumb {
+    background: var(--color-background-lighter);
+}

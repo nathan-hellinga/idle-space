@@ -18,6 +18,27 @@ const initialState = {
 export default function colony(state = initialState, action) {
   switch (action.type) {
     case ADD_COLONIST:{
+      // check if negative - extra checks against assignments
+      if(action.payload.count < 0){
+        // check if the new colonist count < assigned colonists
+        const assigned = Object.values(state.assignments).reduce((a, r) => a + r, 0);
+        let diff = Math.abs(state.population + action.payload.count - assigned)
+        if(state.population + action.payload.count < assigned){
+          let assignmentsCopy = {...state.assignments};
+          for (const [key, value] of Object.entries(state.assignments)) {
+            if(value > 0){
+              const subAmount = Math.min(diff, value);
+              diff -= subAmount;
+              assignmentsCopy[key] = value - subAmount;
+            }
+          }
+          return{
+            ...state,
+            population: Math.max(state.population + action.payload.count, 1),
+            assignments: assignmentsCopy
+          }
+        }
+      }
       return {
         ...state,
         population: Math.max(state.population + action.payload.count, 1)
