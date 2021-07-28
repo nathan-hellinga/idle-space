@@ -131,7 +131,7 @@ export default function GameManager() {
         const keys = Object.keys(colonyResources);
         const chosen = keys[Math.floor(Math.random()*keys.length)];
         const amount = Math.ceil(Math.random() * population)
-        dispatch(increaseColonyResources({chosen: amount}));
+        dispatch(increaseColonyResources({[chosen]: amount}));
         dispatch(addMessage(`One of our people was exploring the ruins and found ${amount} ${chosen}!`, 3))
       }
 

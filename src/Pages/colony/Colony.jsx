@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, ButtonGroup, Divider, Grid} from "@material-ui/core";
+import {Button, ButtonGroup, Divider, Grid, Tooltip} from "@material-ui/core";
 import CommunicationsPanel from "../../Components/communications/communicationsPanel";
 import classes from "./colony.module.css";
 import ColonyOverview from "../../Components/colonyDisplays/colonyOverview";
@@ -8,6 +8,7 @@ import ColonyBuildingsPanel from "../../Components/colonyDisplays/colonyBuilding
 import ColonyAssignmentsPanel from "../../Components/colonyDisplays/assignments/colonyAssignmentsPanel";
 import {useShallowEqualSelector} from "../../Hooks/useShallowEqualSelector";
 import Research from "../../Components/colonyDisplays/research";
+import ColonyAssignmentsHeader from "../../Components/colonyDisplays/colonyAssignmentsHeader";
 
 function Colony() {
   const [openTab, setOpenTab] = useState('building');
@@ -17,14 +18,18 @@ function Colony() {
   return (
     <Grid container spacing={2} className={classes.wrapper}>
       <Grid item md={4} className={classes.sidePanel}>
-        <CommunicationsPanel/>
-      </Grid>
-      <Grid item md={4}>
         <ColonyOverview/>
         <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
-        <ColonyResources />
+        <ColonyResources/>
         <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
-        <ColonyAssignmentsPanel />
+        <div className={classes.comsWrapper}>
+          <CommunicationsPanel/>
+        </div>
+      </Grid>
+      <Grid item md={4}>
+        <ColonyAssignmentsHeader/>
+        <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
+        <ColonyAssignmentsPanel/>
       </Grid>
       <Grid item md={4}>
         {/*<h1 style={{margin: 0}}>Buildings</h1>*/}
@@ -34,11 +39,20 @@ function Colony() {
             variant={openTab === 'building' ? "contained" : "outlined"}
             onClick={() => setOpenTab('building')}
           >Building</Button>
-          <Button
-            variant={openTab === 'research' ? "contained" : "outlined"}
-            onClick={() => setOpenTab('research')}
-            disabled={!colonyBuildings?.engineer}
-          >Engineering</Button>
+          <Tooltip
+            title={"Unlocked after constructing 'Engineers Workshop'"}
+            arrow
+            placement={'top'}
+            disableHoverListener={Boolean(colonyBuildings?.engineer)}
+            disableTouchListener={Boolean(colonyBuildings?.engineer)}
+            disableFocusListener={Boolean(colonyBuildings?.engineer)}
+          >
+            <Button
+              variant={openTab === 'research' ? "contained" : "outlined"}
+              onClick={() => setOpenTab('research')}
+              disabled={!colonyBuildings?.engineer}
+            >Engineering</Button>
+          </Tooltip>
         </ButtonGroup>
         {
           openTab === 'building' ?

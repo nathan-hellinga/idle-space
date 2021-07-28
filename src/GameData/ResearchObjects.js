@@ -15,7 +15,7 @@ export const ResearchObjects = [
   {
     id: 'sn2',
     title: 'Improved Space Nets II',
-    subtitle: "Have you have tried eating soup off a plate? Yeah well we made the nets more like bowls now",
+    subtitle: "Have you have tried eating soup off a plate? We made the nets more like bowls now",
     message: "Did that make sense? Bowls?... the nets are deeper now so we can catch bigger stuff, kind of like a baseball glove.",
     multiplier: 4,
     fabType: 'spaceNet',

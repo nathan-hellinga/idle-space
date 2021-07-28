@@ -108,6 +108,41 @@ export const colonyObjects = {
       },
     ]
   },
+  sacrifice: {
+    title: "Sacrificial Chamber",
+    subtitle: "We have heard a call from the void that demands blood",
+    basePrice: 600000,
+    costMultiFactor: 1.5,
+    workers: 200, // all may worship at the temple of the great old ones
+    inputs : [],
+    outputs: []
+  },
+  worshipper: {
+    title: "Temple to the Great Old Ones",
+    subtitle: "If we provide the Great Old Ones with tribute they will bestow upon us the gifts of the heavens",
+    basePrice: 1500000,
+    costMultiFactor: 1.5,
+    workers: 200, // all may worship at the temple of the great old ones
+    inputs : [
+      {
+        name: 'steel',
+        numerator: 5,
+        denominator: 60
+      },
+      {
+        name: 'blood',
+        numerator: 5,
+        denominator: 60
+      },
+    ],
+    outputs: [
+      {
+        name: 'favour',
+        numerator: 1,
+        denominator: 60
+      },
+    ]
+  },
 }
 
 

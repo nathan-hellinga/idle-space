@@ -29,18 +29,18 @@ function LaunchPanel() {
   ]
 
   const roundToAppropriate = num => {
-    if(num > 1){
+    if (num > 1) {
       return num.toFixed(3);
-    }else if(num > 0.0999){
+    } else if (num > 0.0999) {
       return num.toFixed(3);
-    }else if(num > 0.0099){
+    } else if (num > 0.0099) {
       return num.toFixed(4);
-    }else{
+    } else {
       return num.toFixed(5);
     }
   }
 
-  if(launchFacilityCount === 0) return null;
+  if (launchFacilityCount === 0) return null;
   return (
     <div>
       <Grid item xs={12} style={{display: "flex", flexDirection: 'column', alignItems: 'center'}}>
@@ -50,7 +50,7 @@ function LaunchPanel() {
           fullWidth
           variant={'outlined'}
           color={'secondary'}
-          onClick={ () => setLaunchConfirmation(true)}
+          onClick={() => setLaunchConfirmation(true)}
         >Launch</Button>
       </Grid>
       <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
@@ -64,7 +64,8 @@ function LaunchPanel() {
           </h1>
           <p>
             Building more <span style={{color: 'var(--color-primary)'}}>Orbital Launch Platforms</span> and
-            <span style={{color: 'var(--color-primary)'}}>Space Elevators</span> will increase the amount of resources you will
+            <span style={{color: 'var(--color-primary)'}}>Space Elevators</span> will increase the amount of resources
+            you will
             get to bring with you. Only leave when you are sure you are ready.
           </p>
         </div>
