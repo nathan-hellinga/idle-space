@@ -7,8 +7,8 @@ import ColonyResources from "../../Components/colonyDisplays/colonyResources";
 import ColonyBuildingsPanel from "../../Components/colonyDisplays/colonyBuildingsPanel";
 import ColonyAssignmentsPanel from "../../Components/colonyDisplays/assignments/colonyAssignmentsPanel";
 import {useShallowEqualSelector} from "../../Hooks/useShallowEqualSelector";
-import Research from "../../Components/colonyDisplays/research";
 import ColonyAssignmentsHeader from "../../Components/colonyDisplays/colonyAssignmentsHeader";
+import EngineeringPanel from "../../Components/colonyDisplays/engineering/engineeringPanel";
 
 function Colony() {
   const [openTab, setOpenTab] = useState('building');
@@ -58,7 +58,7 @@ function Colony() {
           openTab === 'building' ?
             <ColonyBuildingsPanel/>
             :
-            <Research/>
+            <EngineeringPanel/>
         }
 
       </Grid>

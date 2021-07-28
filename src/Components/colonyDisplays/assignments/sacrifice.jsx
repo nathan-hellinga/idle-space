@@ -18,7 +18,7 @@ function Sacrifice() {
       <Grid container>
         <Grid item xs={8} className={classes.titles}>
           <h2>Sacrifice Colonist</h2>
-          <p style={{fontStyle: 'italic'}}>blood for the blood god</p>
+          <p style={{fontStyle: 'italic', color: '#d01c1c', fontFamily: "Cabin Sketch"}}>A God demands blood</p>
         </Grid>
         <Grid item xs={4}>
           <Button

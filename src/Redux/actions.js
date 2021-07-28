@@ -5,7 +5,7 @@ import {
   ASSIGN_COLONIST,
   BUY_UPGRADE,
   CLEAR_MESSAGES,
-  CLOSE_STORY,
+  CLOSE_STORY, COLONY_RESEARCH,
   DECREASE_COLONY_RESOURCE,
   DECREASE_RESOURCES,
   INCREASE_COLONY_RESOURCE,
@@ -129,6 +129,13 @@ export const unAssignColonist = (type) => ({
   type: UN_ASSIGN_COLONIST,
   payload: {
     type
+  }
+})
+
+export const ResearchColony = (key) => ({
+  type: COLONY_RESEARCH,
+  payload: {
+    research: key
   }
 })
 

@@ -1,6 +1,6 @@
 import {
   ADD_BUILDING, ADD_COLONIST,
-  ASSIGN_COLONIST,
+  ASSIGN_COLONIST, COLONY_RESEARCH,
   DECREASE_COLONY_RESOURCE,
   INCREASE_COLONY_RESOURCE,
   UN_ASSIGN_COLONIST
@@ -11,7 +11,8 @@ const initialState = {
   population: 5,
   buildings: {},
   assignments: {},
-  resources: {}
+  resources: {},
+  research: []
 }
 
 
@@ -128,6 +129,13 @@ export default function colony(state = initialState, action) {
       return {
         ...state,
         assignments: assignmentCopy
+      }
+    }
+    case COLONY_RESEARCH:{
+      const key = action.payload.research;
+      return {
+        ...state,
+        research: [...new Set([...state.research, key])]
       }
     }
     default:

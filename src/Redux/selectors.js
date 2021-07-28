@@ -6,12 +6,14 @@ export const getResources = store => store.resources.current;
 export const getIncomeSources = store => store.sources;
 
 export const getSourceCurrentIncomes = store => {
-  // todo multiply each source by any upgrades
+  let multiplier = 1;
+  if(store?.colony?.research?.includes('mining 1'))
+    multiplier *= 5;
+
   let incomes = {}
   for (const [sourceType, count] of Object.entries(store.sources)) {
     const fabDetails = fabObjects[sourceType];
     if (fabDetails){
-      let multiplier = 1;
       for (const upgradeId of store.upgrades) {
         const upgrade = ResearchObjects.find(x => x.id === upgradeId);
         if(upgrade?.fabType === sourceType){
@@ -26,12 +28,17 @@ export const getSourceCurrentIncomes = store => {
 
 
 export const getIncomePerSecond = store => {
+  // global upgrades
+  let multiplier = 1;
+  if(store?.colony?.research?.includes('mining 1'))
+    multiplier *= 5;
+
+
   // calculate the total income / second
   let total = 0;
   for (const [sourceType, count] of Object.entries(store.sources)) {
     const fabDetails = fabObjects[sourceType];
     if (fabDetails){
-      let multiplier = 1;
       for (const upgradeId of store.upgrades) {
         const upgrade = ResearchObjects.find(x => x.id === upgradeId);
         if(upgrade?.fabType === sourceType){
@@ -57,6 +64,7 @@ export const getColonyResources = store => {
 }
 
 export const getColonyResourcesPerSecond = store => {
+  // todo apply upgrades
   let incomes = {};
 
   loop:

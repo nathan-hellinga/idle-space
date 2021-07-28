@@ -14,7 +14,7 @@ export default function Purchasable({title, subtitle, altText, owned, price, onP
 
           <div className={classes.content} style={{width: owned >= 0 ? '60%' : '100%'}}>
             <h1>{title}</h1>
-            <h3 style={{marginTop: 'auto'}}>{FormatInt(price)}</h3>
+            <h3 style={{marginTop: 'auto'}}>{typeof price === 'number' ? FormatInt(price) : price}</h3>
           </div>
           <div className={classes.content2} style={{width: owned >= 0 ? '60%' : '100%'}}>
             <p style={{marginBottom: '4px'}}>{subtitle}</p>
