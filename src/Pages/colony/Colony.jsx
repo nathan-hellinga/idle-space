@@ -17,7 +17,7 @@ function Colony() {
 
   return (
     <Grid container spacing={2} className={classes.wrapper}>
-      <Grid item md={4} className={classes.sidePanel}>
+      <Grid item xs={12} sm={4} className={classes.sidePanel}>
         <ColonyOverview/>
         <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
         <ColonyResources/>
@@ -26,12 +26,12 @@ function Colony() {
           <CommunicationsPanel/>
         </div>
       </Grid>
-      <Grid item md={4}>
+      <Grid item sm={4} xs={12}>
         <ColonyAssignmentsHeader/>
         <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
         <ColonyAssignmentsPanel/>
       </Grid>
-      <Grid item md={4}>
+      <Grid item xs={12} sm={4}>
         {/*<h1 style={{margin: 0}}>Buildings</h1>*/}
         {/*<Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>*/}
         <ButtonGroup fullWidth>

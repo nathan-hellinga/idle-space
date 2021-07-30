@@ -1,5 +1,6 @@
 .sidePanel{
-    background-color: var(--color-background-light);
+    /*background-color: var(--color-background-light);*/
+    padding-top: 70px!important;
     max-height: 100%;
     overflow: auto;
 }
@@ -19,4 +20,15 @@
 }
 .sidePanel::-webkit-scrollbar-thumb, .comsWrapper::-webkit-scrollbar-thumb {
     background: var(--color-background-lighter);
+}
+
+
+@media only screen and (max-width: 600px) {
+    .sidePanel{
+        max-height: none;
+    }
+
+    .comsWrapper{
+        max-height: 350px;
+    }
 }

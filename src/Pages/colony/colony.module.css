@@ -28,3 +28,16 @@
 .sidePanel::-webkit-scrollbar-thumb, .comsWrapper::-webkit-scrollbar-thumb {
     background: var(--color-background-lighter);
 }
+
+
+@media only screen and (max-width: 600px) {
+    .wrapper{
+        height: auto;
+    }
+    .sidePanel{
+        max-height: none;
+    }
+    .comsWrapper{
+        max-height: 350px;
+    }
+}
