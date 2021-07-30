@@ -5,7 +5,7 @@ export const colonyObjects = {
     basePrice: 5000,
     costMultiFactor: 2,
     workers: 3,
-    inputs : [],
+    inputs: [],
     outputs: [
       {
         name: 'biomass',
@@ -14,7 +14,7 @@ export const colonyObjects = {
       }
     ]
   },
-  engineer:{
+  engineer: {
     title: "Engineers Workshop",
     subtitle: "Our systems are in dire need of maintenance, proper engineering training and tools would let us " +
       "better maintain our life support and other systems",
@@ -41,7 +41,7 @@ export const colonyObjects = {
     basePrice: 100000,
     costMultiFactor: 1.5,
     workers: 2,
-    inputs : [
+    inputs: [
       {
         name: 'biomass',
         numerator: 4,
@@ -62,7 +62,7 @@ export const colonyObjects = {
     basePrice: 200000,
     costMultiFactor: 1.5,
     workers: 1,
-    inputs : [
+    inputs: [
       {
         name: 'biomass',
         numerator: 5,
@@ -83,7 +83,7 @@ export const colonyObjects = {
     basePrice: 500000,
     costMultiFactor: 1.5,
     workers: 2,
-    inputs : [
+    inputs: [
       {
         name: 'food',
         numerator: 5,
@@ -101,8 +101,24 @@ export const colonyObjects = {
         numerator: 1,
         denominator: 60
       },
+    ]
+  },
+  breeder: {
+    title: "Breedery",
+    subtitle: "We need more colonists.",
+    basePrice: 1500000,
+    costMultiFactor: 1.5,
+    workers: 2,
+    inputs: [
       {
-        name: 'bio-lattice',
+        name: 'food',
+        numerator: 25,
+        denominator: 60
+      },
+    ],
+    outputs: [
+      {
+        name: 'population',
         numerator: 1,
         denominator: 60
       },
@@ -111,19 +127,19 @@ export const colonyObjects = {
   sacrifice: {
     title: "Sacrificial Chamber",
     subtitle: "We have heard a call from the void that demands blood",
-    basePrice: 600000,
+    basePrice: 3500000,
     costMultiFactor: 1.5,
     workers: 200, // all may worship at the temple of the great old ones
-    inputs : [],
+    inputs: [],
     outputs: []
   },
   worshipper: {
     title: "Temple to the Great Old Ones",
     subtitle: "If we provide the Great Old Ones with tribute they will bestow upon us the gifts of the heavens",
-    basePrice: 1500000,
+    basePrice: 10000000,
     costMultiFactor: 1.5,
     workers: 200, // all may worship at the temple of the great old ones
-    inputs : [
+    inputs: [
       {
         name: 'steel',
         numerator: 5,

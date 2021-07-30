@@ -31,7 +31,15 @@ export const getIncomePerSecond = store => {
   // global upgrades
   let multiplier = 1;
   if(store?.colony?.research?.includes('mining 1'))
-    multiplier *= 5;
+    multiplier *= 1.5;
+  if(store?.colony?.research?.includes('mining 2'))
+    multiplier *= 1.5;
+  if(store?.colony?.research?.includes('mining 3'))
+    multiplier *= 1.5;
+  if(store?.colony?.research?.includes('mining 4'))
+    multiplier *= 1.5;
+  if(store?.colony?.research?.includes('mining 5'))
+    multiplier *= 1.5;
 
 
   // calculate the total income / second
@@ -64,9 +72,17 @@ export const getColonyResources = store => {
 }
 
 export const getColonyResourcesPerSecond = store => {
-  // todo apply upgrades
+  let multipliers = Object.entries(colonyObjects)
+    .reduce((a, [key, value]) => {
+      for (const output of value.outputs) {
+        a[output.name] = 1;
+      }
+      for (const output of value.inputs) {
+        a[output.name] = 1;
+      }
+      return a;
+    }, {})
   let incomes = {};
-
   loop:
   for (const [key, value] of Object.entries(store.colony.assignments)) {
     const details = colonyObjects[key];
@@ -88,6 +104,30 @@ export const getColonyResourcesPerSecond = store => {
       incomes[output.name] = (incomesCopy[output.name] ?? 0) + outputRate;
     }
   }
+
+
+  // apply multipliers
+  if(store.colony.research.includes("biomass efficiency 1"))
+    multipliers.biomass *= 2;
+  if(store.colony.research.includes("biomass efficiency 2"))
+    multipliers.biomass *= 2;
+  if(store.colony.research.includes("night vision goggles")){
+    multipliers.tech *= 1.5;
+    multipliers.meds *= 1.25;
+  }
+  if(store.colony.research.includes("antibiotics"))
+    multipliers.meds *= 1.75;
+  if(store.colony.research.includes("prayer beads"))
+    multipliers.favour *= 2;
+  if(store.colony.research.includes("genetics"))
+    multipliers.population *= 2;
+
+
+  // multiply income by multipliers
+  for (const [key, value] of Object.entries(incomes)) {
+    incomes[key] *= multipliers[key]
+  }
+
   return incomes;
 }
 

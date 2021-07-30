@@ -14,9 +14,12 @@ function ColonyResources() {
         <tr><th>Resource</th><th>amount</th></tr>
         </thead>
         <tbody>
-        {Object.entries(resources).map(([key, value]) => (
-          <tr key={`colony_resources_${key}`}><td>{key}</td><td>{value}</td></tr>
-        ))}
+        {Object.entries(resources).map(([key, value]) => {
+          if(key === 'population') return null;
+          return(
+            <tr key={`colony_resources_${key}`}><td>{key}</td><td>{value}</td></tr>
+          )
+        })}
         </tbody>
       </table>
 

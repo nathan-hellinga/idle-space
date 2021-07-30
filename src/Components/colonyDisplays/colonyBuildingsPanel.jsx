@@ -13,7 +13,8 @@ function ColonyBuildingsPanel() {
   const buildings = useShallowEqualSelector(state => state.colony.buildings);
   const resources = useSelector(state => state.resources.colonyResources)
 
-  const mapObject = Object.entries(colonyObjects).map(([key, value]) => ({...value, key}))
+  const mapObject = Object.entries(colonyObjects)
+    .map(([key, value]) => ({...value, key}));
   return (
     <Grid container spacing={1} style={{marginTop: '10px'}}>
       {mapObject.map((details, index) => {

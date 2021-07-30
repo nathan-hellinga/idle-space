@@ -11,11 +11,12 @@ export default function EngineeringPanel() {
   const dispatch = useDispatch();
   const colonyResources = useShallowEqualSelector(getColonyResources);
   const colonyResearch = useShallowEqualSelector(state => state.colony.research);
+  const colonyBuildings = useShallowEqualSelector(state => state.colony.buildings);
 
 
   const checkResources = (price) => {
     for (const [key, value] of Object.entries(price)) {
-      if(!colonyResources[key] || colonyResources[key] < value) return false;
+      if (!colonyResources[key] || colonyResources[key] < value) return false;
     }
     return true;
   }
@@ -31,19 +32,24 @@ export default function EngineeringPanel() {
   return (
     <Grid container spacing={1} style={{marginTop: '10px'}}>
       {mapObject.map((details, index) => {
-            return (
-              <Grid item xs={12} key={`engineering_option_${details.key}`}>
-                <Purchasable
-                  title={details.title}
-                  subtitle={details.subtitle}
-                  altText={Object.entries(details.price).map(([key, value]) => `${value} ${key}`).join(", ")}
-                  // owned={buildings[details.key]}
-                  price={Object.entries(details.price).map(([key, value]) => `${value} ${key}`).join(", ")}
-                  disabled={!checkResources(details.price)}
-                  onPurchase={() => purchase(details)}
-                />
-              </Grid>
-            )
+          if(colonyBuildings[details.building] < 1) return null;
+          for (const dependency of details.dependencies) {
+            if(!colonyResearch.includes(dependency)) return null;
+          }
+
+          return (
+            <Grid item xs={12} key={`engineering_option_${details.key}`}>
+              <Purchasable
+                title={details.title}
+                subtitle={details.subtitle}
+                altText={Object.entries(details.price).map(([key, value]) => `${value} ${key}`).join(", ")}
+                // owned={buildings[details.key]}
+                price={Object.entries(details.price).map(([key, value]) => `${value} ${key}`).join(", ")}
+                disabled={!checkResources(details.price)}
+                onPurchase={() => purchase(details)}
+              />
+            </Grid>
+          )
         }
       )}
     </Grid>

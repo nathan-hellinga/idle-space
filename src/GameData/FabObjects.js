@@ -52,7 +52,7 @@ export const fabObjects = {
     title: 'Orbital Launch',
     subtitle: "A proper orbital launch facility will allow us to get resources off the surface of this rock",
     basePrice: 10000000,
-    costMultiFactor: 1.14,
+    costMultiFactor: 1.44,
     baseIncome: 2500,
     message: "!We can now get resources into orbit and return to Earth with our spoils. With only 1 launch facility " +
       "we won't be able to get much into orbit though. Build more launch facilities and space elevators to increase " +
@@ -62,7 +62,7 @@ export const fabObjects = {
     title: 'Space Elevator',
     subtitle: "A space elevator will help us get even more resources into orbit before we blast back to earth rich",
     basePrice: 50000000,
-    costMultiFactor: 1.15,
+    costMultiFactor: 1.55,
     baseIncome: 3500,
     message: "The more orbital launch facilities and space elevators we have when we launch for earth the more of the resources " +
       "we have extracted we will be able to take with us."

@@ -25,6 +25,7 @@ function ColonyAssignmentsPanel() {
       {Object.entries(assignments).map(([key, value]) => {
         const details = colonyObjects[key];
         if(!details) return null;
+        if(key === 'sacrifice') return null;
         return(
           <AssignmentControl key={`assignments_${key}`} name={key} assigned={value} subtitle={generateSubtitle(details, value)}/>
         )

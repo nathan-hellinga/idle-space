@@ -38,6 +38,12 @@ export default function GameManager() {
         return a;
       }, {});
       dispatch(increaseColonyResources(payload))
+
+      // check if we need to convert population resource to population
+      if(colonyResources?.population >=1){
+        dispatch(decreaseColonyResources({population: 1}));
+        dispatch(addColonist(1));
+      }
     }
   }, 40)
 
