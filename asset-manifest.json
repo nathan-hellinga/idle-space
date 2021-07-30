@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/idle-space/static/css/main.44c6f2db.chunk.css",
-    "main.js": "/idle-space/static/js/main.d92c6587.chunk.js",
-    "main.js.map": "/idle-space/static/js/main.d92c6587.chunk.js.map",
+    "main.css": "/idle-space/static/css/main.f52769ba.chunk.css",
+    "main.js": "/idle-space/static/js/main.b65faa91.chunk.js",
+    "main.js.map": "/idle-space/static/js/main.b65faa91.chunk.js.map",
     "runtime-main.js": "/idle-space/static/js/runtime-main.1034ea38.js",
     "runtime-main.js.map": "/idle-space/static/js/runtime-main.1034ea38.js.map",
     "static/js/2.88307370.chunk.js": "/idle-space/static/js/2.88307370.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.6168c90b.chunk.js": "/idle-space/static/js/3.6168c90b.chunk.js",
     "static/js/3.6168c90b.chunk.js.map": "/idle-space/static/js/3.6168c90b.chunk.js.map",
     "index.html": "/idle-space/index.html",
-    "static/css/main.44c6f2db.chunk.css.map": "/idle-space/static/css/main.44c6f2db.chunk.css.map",
+    "static/css/main.f52769ba.chunk.css.map": "/idle-space/static/css/main.f52769ba.chunk.css.map",
     "static/js/2.88307370.chunk.js.LICENSE.txt": "/idle-space/static/js/2.88307370.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1034ea38.js",
     "static/js/2.88307370.chunk.js",
-    "static/css/main.44c6f2db.chunk.css",
-    "static/js/main.d92c6587.chunk.js"
+    "static/css/main.f52769ba.chunk.css",
+    "static/js/main.b65faa91.chunk.js"
   ]
 }
