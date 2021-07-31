@@ -18,8 +18,8 @@ export default function Main(){
 
 
   return(
-    <Grid container spacing={2} style={{height: '100vh'}} alignItems={'stretch'}>
-      <Grid item xs={12} sm={6} className={classes.sidePanel} style={{overflow: 'hidden', display: "flex", flexDirection: 'column'}}>
+    <Grid container spacing={2} style={{height: '100vh'}} alignItems={'stretch'} justify={'center'}>
+      <Grid item xs={12} sm={6} md={4} className={classes.sidePanel} style={{overflow: 'hidden', display: "flex", flexDirection: 'column'}}>
           <ResourceDisplay/>
           <Divider style={{backgroundColor: '#dbdbdb', margin: '10px 0'}}/>
           <PlanetDisplay/>
@@ -35,7 +35,7 @@ export default function Main(){
           <CommunicationsPanel/>
         </div>
       </Grid>
-      <Grid item xs={12} sm={6} className={classes.sidePanel}>
+      <Grid item xs={12} sm={6} md={4} className={classes.sidePanel}>
         <ButtonGroup fullWidth>
           <Button
             variant={openTab === 'fabricate' ? "contained" : "outlined"}
