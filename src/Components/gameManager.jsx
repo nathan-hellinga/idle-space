@@ -25,6 +25,7 @@ export default function GameManager() {
   const colonyResources = useShallowEqualSelector(getColonyResources);
   const building = useShallowEqualSelector(state => state.colony.buildings);
   const paused = usePaused();
+  const currentPrestige = useSelector(state => state.game.prestige);
 
   const [goneHungry, setGoneHungry] = useState(0);
 
@@ -49,7 +50,7 @@ export default function GameManager() {
 
   // colony upkeep and events
   useInterval(({time, delta}) => {
-    if (!paused) {
+    if (!paused && currentPrestige > 0) {
       console.log("COLONY UPKEEP");
       let foodRequired = population * (delta / 60);
       let wellFed = false;
