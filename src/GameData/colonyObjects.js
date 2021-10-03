@@ -18,7 +18,7 @@ export const colonyObjects = {
     title: "Engineers Workshop",
     subtitle: "Our systems are in dire need of maintenance, proper engineering training and tools would let us " +
       "better maintain our life support and other systems",
-    basePrice: 30000,
+    basePrice: 20000,
     costMultiFactor: 1.5,
     workers: 1,
     inputs: [],
@@ -38,7 +38,7 @@ export const colonyObjects = {
   cook: {
     title: "Kitchen",
     subtitle: "Cooking facilities will let us turn the biomass into proper food. Eating biomass sucks.",
-    basePrice: 100000,
+    basePrice: 90000,
     costMultiFactor: 1.5,
     workers: 2,
     inputs: [
@@ -80,7 +80,7 @@ export const colonyObjects = {
   scout: {
     title: "Reclamation Squads",
     subtitle: "Searching through the remains of society could reward us with lost technology, we may even find other survivors",
-    basePrice: 500000,
+    basePrice: 550000,
     costMultiFactor: 1.5,
     workers: 2,
     inputs: [
@@ -106,7 +106,7 @@ export const colonyObjects = {
   breeder: {
     title: "Breedery",
     subtitle: "We need more colonists.",
-    basePrice: 1500000,
+    basePrice: 1000000,
     costMultiFactor: 1.5,
     workers: 2,
     inputs: [
@@ -127,7 +127,7 @@ export const colonyObjects = {
   sacrifice: {
     title: "Sacrificial Chamber",
     subtitle: "We have heard a call from the void that demands blood",
-    basePrice: 3500000,
+    basePrice: 2500000,
     costMultiFactor: 1.5,
     workers: 200, // all may worship at the temple of the great old ones
     inputs: [],
@@ -160,8 +160,3 @@ export const colonyObjects = {
     ]
   },
 }
-
-
-export const colonyMessages = [
-  "We are having a celebration"
-]
